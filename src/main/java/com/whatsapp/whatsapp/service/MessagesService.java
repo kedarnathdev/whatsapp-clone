@@ -18,4 +18,8 @@ public class MessagesService {
 		return messagesRepository.findAll();
 	}
 	
+	public MessagesEntity updateMessage(MessagesEntity messageEntity) {
+		return messagesRepository.save(messageEntity);
+	}
+	
 }
