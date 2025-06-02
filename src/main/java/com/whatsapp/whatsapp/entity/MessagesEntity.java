@@ -11,38 +11,43 @@ import jakarta.persistence.Table;
 public class MessagesEntity {
 	
 	@Id
+	@Column(name = "message_id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id;
+	private Integer messageId;
 	
-	@Column(name = "message")
-	private String message;
+	@Column(name= "user_id")
+	private Integer userId;
 	
-	@Column(name = "date")
-	private String date;
+	@Column(name = "message_value")
+	private String messageValue;
+	
+	@Column(name = "message_date")
+	private String messageDate;
 
-	public Integer getId() {
-		return id;
+	public Integer getMessageId() {
+		return messageId;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setMessageId(Integer messageId) {
+		this.messageId = messageId;
 	}
 
-	public String getMessage() {
-		return message;
+	public String getMessageValue() {
+		return messageValue;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setMessageValue(String messageValue) {
+		this.messageValue = messageValue;
 	}
 
-	public String getDate() {
-		return date;
+	public String getMessageDate() {
+		return messageDate;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setMessageDate(String messageDate) {
+		this.messageDate = messageDate;
 	}
+	
 	
 	
 }

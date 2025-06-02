@@ -11,28 +11,28 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.whatsapp.whatsapp.entity.MessagesEntity;
 import com.whatsapp.whatsapp.repository.MessagesRepository;
+import com.whatsapp.whatsapp.service.MessagesService;
 
 @RestController
 @RequestMapping("/")
 public class MessagesController {
-	
+
 	@Autowired
-	MessagesRepository messagesRepository;
-	
+	MessagesService messagesService;
+
 	@GetMapping("/test")
 	public String testMethod() {
 		return "Heloooo";
 	}
-	
+
 	@GetMapping("/getAllMessages")
 	public List<MessagesEntity> getAllMessages() {
-		return messagesRepository.findAll();
+		return messagesService.getAllMessages();
 	}
-	
+
 	@PostMapping("/updateMessage")
 	public MessagesEntity updateMessage(@RequestBody MessagesEntity messageEntity) {
-		messagesRepository.save(messageEntity);
-		return messageEntity;
+		return messagesService.updateMessage(messageEntity);
 	}
 
 }
