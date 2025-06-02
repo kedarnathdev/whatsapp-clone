@@ -3,10 +3,11 @@ name: Maven Build
 on:
   pull_request:
     branches:
-      - main  # PRs targeting 'main' will trigger this build
+      - main
 
 jobs:
   build:
+    name: Maven Build
     runs-on: ubuntu-latest
 
     steps:
