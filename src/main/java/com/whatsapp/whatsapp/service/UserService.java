@@ -21,4 +21,12 @@ public class UserService {
 	public UserEntity getUserById(Integer userId) {
 		return userRepository.findById(userId).get();
 	}
+	
+	public UserEntity createUser(UserEntity userEntity) {
+		return userRepository.save(userEntity);
+	}
+	
+	public Integer login(String email,String password) {
+		return userRepository.login(email, password);
+	}
 }
