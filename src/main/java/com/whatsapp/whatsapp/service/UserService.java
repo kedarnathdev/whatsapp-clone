@@ -26,7 +26,7 @@ public class UserService {
 		return userRepository.save(userEntity);
 	}
 	
-	public Integer login(String email,String password) {
-		return userRepository.login(email, password);
+	public UserEntity userLogin(String userEmail,String userPassword) {
+		return userRepository.findByUserEmailAndUserPassword(userEmail, userPassword);
 	}
 }

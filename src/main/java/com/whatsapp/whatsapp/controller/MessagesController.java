@@ -4,13 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.whatsapp.whatsapp.entity.MessagesEntity;
-import com.whatsapp.whatsapp.repository.MessagesRepository;
 import com.whatsapp.whatsapp.service.MessagesService;
 
 @RestController
@@ -33,6 +33,11 @@ public class MessagesController {
 	@PostMapping("/updateMessage")
 	public MessagesEntity updateMessage(@RequestBody MessagesEntity messageEntity) {
 		return messagesService.updateMessage(messageEntity);
+	}
+	
+	@GetMapping("/getMessagesByUserId/{userId}")
+	public List<MessagesEntity> getMessagesByUserId(@PathVariable Integer userId) {
+		return messagesService.getMessagesByUserId(userId);
 	}
 
 }

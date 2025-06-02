@@ -1,4 +1,5 @@
 package com.whatsapp.whatsapp.entity;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,18 +10,18 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "messages")
 public class MessagesEntity {
-	
+
 	@Id
 	@Column(name = "message_id")
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer messageId;
-	
-	@Column(name= "user_id")
+
+	@Column(name = "user_id")
 	private Integer userId;
-	
+
 	@Column(name = "message_value")
 	private String messageValue;
-	
+
 	@Column(name = "message_date")
 	private String messageDate;
 
@@ -30,6 +31,14 @@ public class MessagesEntity {
 
 	public void setMessageId(Integer messageId) {
 		this.messageId = messageId;
+	}
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 
 	public String getMessageValue() {
@@ -47,7 +56,5 @@ public class MessagesEntity {
 	public void setMessageDate(String messageDate) {
 		this.messageDate = messageDate;
 	}
-	
-	
-	
+
 }

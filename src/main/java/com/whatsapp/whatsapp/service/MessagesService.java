@@ -22,4 +22,8 @@ public class MessagesService {
 		return messagesRepository.save(messageEntity);
 	}
 	
+	public List<MessagesEntity> getMessagesByUserId(Integer userId) {
+		return messagesRepository.findByUserId(userId);
+	}
+	
 }
