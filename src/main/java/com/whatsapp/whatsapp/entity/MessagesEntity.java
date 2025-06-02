@@ -28,7 +28,7 @@ public class MessagesEntity {
 		this.id = id;
 	}
 
-	public String getMessage() {
+	public Strin getMessage() {
 		return message;
 	}
 
