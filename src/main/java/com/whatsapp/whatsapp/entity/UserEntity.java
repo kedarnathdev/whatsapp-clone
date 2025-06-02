@@ -12,18 +12,18 @@ import jakarta.persistence.Table;
 public class UserEntity {
 	
 	@Id
-	@Column(name="userId")
+	@Column(name="user_id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer userId;
 	
-	@Column(name="userName")
+	@Column(name="user_name")
 	private String userName;
 	
-	@Column(name="email")
-	private String email;
+	@Column(name="user_email")
+	private String userEmail;
 	
-	@Column(name="password")
-	private String password;
+	@Column(name="user_password")
+	private String userPassword;
 
 	
 
@@ -43,21 +43,22 @@ public class UserEntity {
 		this.userName = userName;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getUserEmail() {
+		return userEmail;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getUserPassword() {
+		return userPassword;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
 	}
+
 	
 	
 	
