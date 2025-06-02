@@ -34,7 +34,7 @@ public class UserController {
 	}
 	
 	@GetMapping("/login/{email}/{password}")
-	public Integer login(@PathVariable String email, @PathVariable String password) {
-		return service.login(email, password);
+	public UserEntity login(@PathVariable String email, @PathVariable String password) {
+		return service.userLogin(email, password);
 	}
 }
