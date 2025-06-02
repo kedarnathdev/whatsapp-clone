@@ -24,16 +24,15 @@ public class MessagesController {
 		return "Heloooo";
 	}
 	
-	@GetMapping("/get")
-	public List<MessagesEntity> get() {
+	@GetMapping("/getAllMessages")
+	public List<MessagesEntity> getAllMessages() {
 		return messagesRepository.findAll();
 	}
 	
-	@PostMapping("/update")
+	@PostMapping("/updateMessage")
 	public MessagesEntity updateMessage(@RequestBody MessagesEntity messageEntity) {
 		messagesRepository.save(messageEntity);
 		return messageEntity;
-		
 	}
 
 }
