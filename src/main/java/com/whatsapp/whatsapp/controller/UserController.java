@@ -44,6 +44,11 @@ public class UserController {
 		return service.userLogin(email, password);
 	}
 	
+	@PostMapping("/login")
+	public User login(@RequestBody User userEntity) throws Exception {
+		return service.loginUser(userEntity);
+	}
+	
 	@PostMapping("/contacts")
 	public List<Contact> getContacts(@RequestBody User userEntity) {
 		return new ArrayList<Contact>();
