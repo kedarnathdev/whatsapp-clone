@@ -1,6 +1,9 @@
 package com.whatsapp.whatsapp.service;
 
 import java.util.List;
+import java.util.Objects;
+
+import javax.management.RuntimeErrorException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,4 +32,16 @@ public class UserService {
 	public User userLogin(String userEmail,String userPassword) {
 		return userRepository.findByUserEmailAndUserPassword(userEmail, userPassword);
 	}
+	
+	public User loginUser(User user) throws Exception {
+		User returnedUser =  userRepository.findByUserEmailAndUserPassword(user.getUserEmail(), user.getUserPassword());
+		
+		if (Objects.nonNull(returnedUser)) {
+			return returnedUser;
+		} else {
+			throw new Exception("user not found");
+		}
+	}
+	
+	
 }
