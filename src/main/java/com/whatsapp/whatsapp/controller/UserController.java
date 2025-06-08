@@ -1,9 +1,9 @@
 package com.whatsapp.whatsapp.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.whatsapp.whatsapp.entity.Contact;
+import com.whatsapp.whatsapp.dto.Contact;
 import com.whatsapp.whatsapp.entity.User;
 import com.whatsapp.whatsapp.service.UserService;
 
@@ -24,13 +24,19 @@ public class UserController {
 	@Autowired
 	UserService service;
 	
+	@GetMapping("/test")
+	public String testMethod() {
+		System.out.println("Hello");
+		return "Heloooo";
+	}
+	
 	@GetMapping("/getAll")
 	public List<User> getAllUsers(){
 		return service.getAllUsers();
 	}
 	
 	@GetMapping("/getAll/{id}")
-	public User getUserById(@PathVariable Integer id){
+	public User getUserById(@PathVariable String id){
 		return service.getUserById(id);
 	}
 	

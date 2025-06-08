@@ -4,12 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import javax.management.RuntimeErrorException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.whatsapp.whatsapp.entity.Contact;
+import com.whatsapp.whatsapp.dto.Contact;
 import com.whatsapp.whatsapp.entity.User;
 import com.whatsapp.whatsapp.repository.UserRepository;
 
@@ -23,7 +21,7 @@ public class UserService {
 		return userRepository.findAll();
 	}
 	
-	public User getUserById(Integer userId) {
+	public User getUserById(String userId) {
 		return userRepository.findById(userId).get();
 	}
 	

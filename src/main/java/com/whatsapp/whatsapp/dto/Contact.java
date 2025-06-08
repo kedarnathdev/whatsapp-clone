@@ -1,4 +1,4 @@
-package com.whatsapp.whatsapp.entity;
+package com.whatsapp.whatsapp.dto;
 
 public class Contact {
 

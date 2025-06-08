@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.whatsapp.whatsapp.entity.User;
 
 @Repository
-public interface UserRepository extends MongoRepository<User, Integer> {
+public interface UserRepository extends MongoRepository<User, String> {
 
 	User findByUserEmailAndUserPassword(String userEmail, String userPassword);
 	
