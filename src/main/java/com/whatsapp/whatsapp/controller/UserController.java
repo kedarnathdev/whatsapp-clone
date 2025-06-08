@@ -49,9 +49,15 @@ public class UserController {
 		return service.loginUser(userEntity);
 	}
 	
-	@PostMapping("/contacts")
-	public List<Contact> getContacts(@RequestBody User userEntity) {
-		return new ArrayList<Contact>();
+	@PostMapping("/saveContact")
+	public User saveContact(@RequestBody User userEntity) throws Exception {
+		return service.saveContact(userEntity);
 	}
+	
+	@PostMapping("/getContacts")
+	public List<Contact> getContacts(@RequestBody User userEntity) throws Exception {
+		return service.getContacts(userEntity);
+	}
+	
 	
 }

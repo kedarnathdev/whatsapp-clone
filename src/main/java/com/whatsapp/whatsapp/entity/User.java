@@ -1,5 +1,7 @@
 package com.whatsapp.whatsapp.entity;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -14,6 +16,16 @@ public class User {
 	private String userEmail;
 
 	private String userPassword;
+
+	private List<String> userContacts;
+
+	public List<String> getUserContacts() {
+		return userContacts;
+	}
+
+	public void setUserContacts(List<String> userContacts) {
+		this.userContacts = userContacts;
+	}
 
 	public String getUserId() {
 		return userId;
@@ -46,7 +58,5 @@ public class User {
 	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
 	}
-	
-	
 
 }

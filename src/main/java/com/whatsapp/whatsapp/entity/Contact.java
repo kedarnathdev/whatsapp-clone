@@ -1,18 +1,13 @@
 package com.whatsapp.whatsapp.entity;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document(collection = "contacts")
 public class Contact {
-	
-	@Id
+
 	private String userId;
-	
+
 	private String lastMessage;
-	
+
 	private String userName;
-	
+
 	private String timeStamp;
 
 	public String getUserId() {
@@ -47,6 +42,4 @@ public class Contact {
 		this.timeStamp = timeStamp;
 	}
 
-	
-	
 }
