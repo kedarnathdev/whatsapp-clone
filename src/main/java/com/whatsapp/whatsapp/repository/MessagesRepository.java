@@ -2,12 +2,12 @@ package com.whatsapp.whatsapp.repository;
 
 import java.util.List;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.whatsapp.whatsapp.entity.MessagesEntity;
+import com.whatsapp.whatsapp.entity.Message;
 
-public interface MessagesRepository extends JpaRepository<MessagesEntity, Integer> {
+public interface MessagesRepository extends MongoRepository<Message, Integer> {
 
-	List<MessagesEntity> findByUserId(Integer userId);
+	List<Message> findBySenderUserId(String userId);
 
 }

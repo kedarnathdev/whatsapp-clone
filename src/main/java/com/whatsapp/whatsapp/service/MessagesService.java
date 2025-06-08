@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.whatsapp.whatsapp.entity.MessagesEntity;
+import com.whatsapp.whatsapp.entity.Message;
 import com.whatsapp.whatsapp.repository.MessagesRepository;
 
 @Service
@@ -14,16 +14,16 @@ public class MessagesService {
 	@Autowired
 	private MessagesRepository messagesRepository;
 	
-	public List<MessagesEntity> getAllMessages() {
+	public List<Message> getAllMessages() {
 		return messagesRepository.findAll();
 	}
 	
-	public MessagesEntity updateMessage(MessagesEntity messageEntity) {
+	public Message updateMessage(Message messageEntity) {
 		return messagesRepository.save(messageEntity);
 	}
 	
-	public List<MessagesEntity> getMessagesByUserId(Integer userId) {
-		return messagesRepository.findByUserId(userId);
+	public List<Message> getMessagesByUserId(String userId) {
+		return messagesRepository.findBySenderUserId(userId);
 	}
 	
 }
