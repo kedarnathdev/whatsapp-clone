@@ -2,6 +2,7 @@ package com.whatsapp.whatsapp.controller;
 
 import java.util.List;
 
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +25,7 @@ public class MessagesController {
 
 	@GetMapping("/test")
 	public String testMethod() {
+		System.out.println("Hello");
 		return "Heloooo";
 	}
 
