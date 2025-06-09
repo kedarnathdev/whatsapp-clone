@@ -29,8 +29,10 @@ public class ChatService {
 				.map(Chat::getMessages).filter(CollectionUtils::isNotEmpty)
 				.orElse(new ArrayList<>());
 		chatMessagesList.add(message);
-		chat.setMessages(chatMessagesList);
-		chatRepository.save(chat);
+		Chat nonNullChat = Optional.ofNullable(chat).orElse(new Chat());
+		nonNullChat.setChatId(message.getChatId());
+		nonNullChat.setMessages(chatMessagesList);
+		chatRepository.save(nonNullChat);
 		return chatMessagesList;
 		
 	}
